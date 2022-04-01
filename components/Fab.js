@@ -1,10 +1,22 @@
 import * as React from 'react';
+import ReactNativeHapticFeedback from 'react-native-haptic-feedback';
 import {FAB} from 'react-native-paper';
+
+const options = {
+  enableVibrateFallback: true,
+  ignoreAndroidSystemSettings: false,
+};
+
+const hapticFeedback = () =>
+  ReactNativeHapticFeedback.trigger('impactHeavy', options);
 
 const MyComponent = () => {
   const [state, setState] = React.useState({open: false});
 
-  const onStateChange = ({open}) => setState({open});
+  const onStateChange = ({open}) => {
+    setState({open});
+    hapticFeedback();
+  };
 
   const {open} = state;
 

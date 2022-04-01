@@ -2,6 +2,7 @@ import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs
 import * as React from 'react';
 import {StyleSheet} from 'react-native';
 import {useTheme} from 'react-native-paper';
+import Fab from '../../Fab';
 import AccountsTab from './AccountsTab';
 import ProfileInfo from './ProfileInfo';
 import TransactionsTab from './Transactions';
@@ -31,6 +32,7 @@ const Home = () => {
           options={{tabBarLabel: 'Transactions'}}
         />
       </Tab.Navigator>
+      <Fab />
     </React.Fragment>
   );
 };

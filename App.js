@@ -24,6 +24,7 @@ const CombinedDefaultTheme = {
     ...NavigationDefaultTheme.colors,
     primary: '#00c853',
     accent: '#00e676',
+    ripples: '#b9f6ca',
   },
 };
 const CombinedDarkTheme = {
@@ -34,6 +35,7 @@ const CombinedDarkTheme = {
     ...NavigationDarkTheme.colors,
     primary: '#00c853',
     accent: '#00e676',
+    ripples: '#757575',
   },
 };
 
@@ -65,7 +67,11 @@ export default function App() {
               <Stack.Screen
                 name="Home"
                 component={screens.Home}
-                options={{header: props => <Header {...props} title="Home" />}}
+                options={{
+                  header: props => (
+                    <Header {...props} title="BetterlifeSavings" />
+                  ),
+                }}
               />
               <Stack.Screen
                 name="Messages"
